@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/664e4332-e011-4c3e-bfc3-0e7a80455bdd/microsoft.web/sites/subscriptions/664e4332-e011-4c3e-bfc3-0e7a80455bdd/resourceGroups/PersonalSite/providers/Microsoft.Web/sites/tylerfaulkner",
+    "appService.deploySubpath": "."
+}
