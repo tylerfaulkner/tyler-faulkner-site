@@ -1,7 +1,7 @@
 import Image from "next/image"
 import pic_of_me from "./images/pic_of_me.jpg"
-import Linkedin_Logo from "./images/Linkedin_Logo.jpg"
-import Github_Logo from "./images/Github_Logo.jpg"
+import LinkedinLogo from "../public/Linkedin_Logo.png"
+import GithubLogo from "../public/Github_Logo.png"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -25,12 +25,12 @@ export default function Main() {
                     <div class="row gx-4 justify-content-center m-0 w-25">
                         <div class="col">
                             <a href="https://www.linkedin.com/in/tyler-faulkner/">
-                                <Image src={Linkedin_Logo} />
+                                <Image src={LinkedinLogo} />
                             </a>
                         </div>
                         <div class="col">
                             <a href="https://github.com/tylerfaulkner">
-                                <Image src={Github_Logo} />
+                                <Image src={GithubLogo} />
                             </a>
                         </div>
                     </div>
