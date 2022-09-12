@@ -1,7 +1,7 @@
 import Image from "next/image"
-import pic_of_me from "./images/pic_of_me.jpg"
-import Linkedin_Logo from "./images/Linkedin-Logo.png"
-import Github_Logo from "./images/Github-Logo.png"
+import pic_of_me from "/public/images/pic_of_me.jpg"
+import Linkedin_Logo from "/public/images/Linkedin-Logo.png"
+import Github_Logo from "/public/images/Github-Logo.png"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
