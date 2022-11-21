@@ -1,1 +1,2 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+To Setup the Project:
+- Run "npm install" in terminal
