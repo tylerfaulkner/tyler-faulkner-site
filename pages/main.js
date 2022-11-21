@@ -2,8 +2,6 @@ import Image from "next/image"
 import pic_of_me from "./images/pic_of_me.jpg"
 import LinkedinLogo from "./images/Linkedin_Logo.jpg"
 import GithubLogo from "./images/Github_Logo.jpg"
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 export default function Main() {
     return(

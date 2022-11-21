@@ -1,0 +1,155 @@
+.container {
+    height: 100vh;
+    overflow: auto;
+}
+
+.col {
+    display: inline-block;
+    position: relative;
+    margin: auto;
+}
+
+body {
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.section{
+    width: 100%;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+.overview{
+    display: flex;
+}
+
+.image-div {
+    position: relative;
+    overflow: hidden;
+    width: 350px;
+    height: 350px;
+    border-radius: 20px;
+    border-color: black;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.image-about {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    border-color: black;
+    margin-top: 25px;
+    margin-bottom: auto;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.helper {
+    height: 100%;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.links {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.linkedin {
+    width: 400px;
+    height: 100px;
+}
+
+.github {
+    width: 400px;
+    height: 100px;
+}
+
+.typed-out {
+    white-space: nowrap;
+    border-right: .15em solid orange;
+    overflow: hidden;
+    text-align: left;
+    font-size: 4em;
+    font-weight: bold;
+    width: 0;
+    animation: 1s typing 1s steps(13, end) forwards, blinking 0.9s steps(1,end) infinite forwards;
+}
+
+.section-header {
+    font-size: 4em;
+    font-weight: bold;
+    font-family: 'Roboto Mono', sans-serif;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: 2s fade-in 3s forwards;
+}
+
+.fade-in-pic {
+    opacity: 0;
+    animation: 3s fade-in 1s forwards;
+}
+
+@keyframes fade-in {
+    from { opacity: 0;}
+    to { opacity: 100;}
+}
+
+.text-area {
+    width: 50%;
+}
+
+.text {
+    font-size: 1.5em;
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+}
+
+.header {
+    width: fit-content;
+}
+
+@keyframes typing {
+    from { width: 0;}
+    to { width: 100%;}
+}
+
+@keyframes blinking {
+    0% {     border-right: .15em solid orange;    }
+    75% {     border-right: 0em;    }
+    100% {     border-right: .15em solid orange;    }
+}
+
+.image {
+    object-fit: contain;
+}
+
+.projects{
+    background-color: cadetblue;
+}
+
+.tutorials {
+
+}
+
+.about {
+    background-color: lightgray;
+}
+
+.about-container {
+    width: 85%;
+}
+
+.text-about {
+    text-align: center;
+    margin-top: 40px;
+}

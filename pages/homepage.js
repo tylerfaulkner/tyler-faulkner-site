@@ -1,0 +1,91 @@
+import TopBar from "./topbar";
+import me_cropped from "./images/me_cropped.jpeg"
+import Image from "next/image"
+import project_pic from "./images/projects.PNG"
+import tutorials from "./images/tutorials.png"
+import github from "./images/github.png"
+import linkedin from "./images/linkedIn.png"
+
+export default function Homepage() {
+    return (
+        <div>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Reenie+Beanie"/>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono"/>
+            <TopBar/>
+            <div className="section overview">
+                <div className="col text-area">
+                    <div className="header">
+                        <div className="typed-out">
+                            Hi, I'm Tyler
+                        </div>
+                    </div>
+                    <div className="text fade-in">
+                    a programmer with experience in machine learning, embedded systems, and automated testing architectures.
+                    I am completing my B.S. in Computer Science with a Minor in Mathematics at the Milwaukee School of Engineering.
+                    My major focuses on the creation of machine learning and artificial intelligence models for large scale data analysis and predictions.
+                    My internship at Cognex allowed my to apply my skills by creating thorough tests for new camera systems and creating new features in user applications.
+                    </div>
+                </div>
+                <div className="col image-div fade-in-pic">
+                    <Image src={me_cropped} fill={true}/>
+                </div>
+            </div>
+            <div className="section projects fade-in">
+                <div className="col image-div">
+                    <Image src={project_pic} fill={true}/>
+                </div>
+                <div className="col text-area">
+                    <div className="header">
+                        <div className="section-header">
+                            Projects
+                        </div>
+                    </div>
+                    <div className="text fade-in">
+                        Explore high-level overviews of some of my favorite personal and school projects.
+                        The image to the left is from a rendering of my N-Body simulation project for my GPU Programming course.
+                        Click on the image to read about my N-Body Simulation project or click the header to read about other projects.
+                    </div>
+                </div>
+            </div>
+            <div className="section tutorials fade-in">
+                <div className="col text-area">
+                    <div className="header">
+                        <div className="section-header">
+                            Tutorials
+                        </div>
+                    </div>
+                    <div className="text fade-in">
+                        One of the primary ways I learn new technologies is through guides I find online. 
+                        I want to contirbute my knowledge and skills by creating my own tutorials. 
+                        Topics will range from game development, to data analysis, to CUDA programming.
+                        Click on the image or the header to see my tutorials.
+                    </div>
+                </div>
+                <div className="col image-div">
+                    <Image src={tutorials} fill={true} objectFit="cover"/>
+                </div>
+            </div>
+            <div className="section about fade-in">
+                <div className="col about-container">
+                    <div className="section-header">
+                        Reach Out
+                    </div>
+                    <div className="text text-about">
+                        I would love to hear from you! If you have a professional inquiry please reach out on LinkedIn.
+                        If you have any tutorial suggestion or comments please send me an email by clicking the header above.
+                    </div>
+                    <div className="links">
+                        <div className="col image-about github">
+                            <span className="helper"></span>
+                            <Image src={github} fill={true}/>
+                        </div>
+                        <div className="col image-about linkedin">
+                            <Image src={linkedin} fill={true}/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
