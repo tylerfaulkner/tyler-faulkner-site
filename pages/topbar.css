@@ -6,8 +6,17 @@
     vertical-align: middle;
 }
 
+.text-black {
+    color: black;
+}
+
 .topelement {
     margin: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 a:hover{

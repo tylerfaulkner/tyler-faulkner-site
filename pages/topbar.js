@@ -1,12 +1,14 @@
+import Link from "next/link";
+
 export default function TopBar() {
     return (
         <div className="topnav">
-            <text>tyler faulkner</text>
+            <text className="text-black">tyler faulkner</text>
             <div className="elements">
-                <a className="topelement">Home</a>
-                <a className="topelement">Projects</a>
-                <a className="topelement">Tutorials</a>
-                <a className="topelement">Contact</a>
+                <Link href={"/"} className="topelement">Home</Link>
+                <Link href={"/projects"} className="topelement">Projects</Link>
+                <Link href={"/tutorials"} className="topelement">Tutorials</Link>
+                <Link href={"/contact"} className="topelement">Contact</Link>
             </div>
         </div>
     );
