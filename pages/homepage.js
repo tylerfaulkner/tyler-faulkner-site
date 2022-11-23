@@ -1,4 +1,3 @@
-import TopBar from "./topbar";
 import me_cropped from "./images/me_cropped.jpeg"
 import Image from "next/image"
 import project_pic from "./images/projects.PNG"
@@ -7,12 +6,9 @@ import github from "./images/github.png"
 import linkedin from "./images/linkedIn.png"
 
 export default function Homepage() {
+    const sizes="(max-width: 768px) 33vw, (max-width: 1200px) 50vw, 100vw"
     return (
         <div>
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Reenie+Beanie"/>
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono"/>
-            <TopBar/>
             <div className="section overview">
                 <div className="col text-area">
                     <div className="header">
@@ -28,12 +24,12 @@ export default function Homepage() {
                     </div>
                 </div>
                 <div className="col image-div fade-in-pic">
-                    <Image src={me_cropped} fill={true}/>
+                    <Image src={me_cropped} fill={true} alt="Image of Tyler" sizes={sizes}/>
                 </div>
             </div>
             <div className="section projects fade-in">
                 <div className="col image-div">
-                    <Image src={project_pic} fill={true}/>
+                    <Image src={project_pic} fill={true} alt="Image of an N-Body Simulation Render" sizes={sizes}/>
                 </div>
                 <div className="col text-area">
                     <div className="header">
@@ -63,7 +59,7 @@ export default function Homepage() {
                     </div>
                 </div>
                 <div className="col image-div">
-                    <Image src={tutorials} fill={true} objectFit="cover"/>
+                    <Image src={tutorials} fill={true} alt="Image of random code" sizes={sizes}/>
                 </div>
             </div>
             <div className="section about fade-in">
@@ -78,10 +74,10 @@ export default function Homepage() {
                     <div className="links">
                         <div className="col image-about github">
                             <span className="helper"></span>
-                            <Image src={github} fill={true}/>
+                            <Image src={github} fill={true} alt="Github Logo" sizes={sizes}/>
                         </div>
                         <div className="col image-about linkedin">
-                            <Image src={linkedin} fill={true}/>
+                            <Image src={linkedin} fill={true} alt="LinkedIn Logo" sizes={sizes}/>
                         </div>
                     </div>
                 </div>
