@@ -6,11 +6,15 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.9.1",
     "bootstrap": "^5.2.1",
+    "emailjs-com": "^3.2.0",
     "eslint-config-next": "^13.0.4",
     "next": "^13.0.4",
+    "node-mailjet": "^5.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "reactstrap": "^9.1.4"
+    "reactstrap": "^9.1.4",
+    "xmlhttprequest": "^1.8.0"
   }
 }
