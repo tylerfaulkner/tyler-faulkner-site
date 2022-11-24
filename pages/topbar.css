@@ -1,9 +1,11 @@
 .topnav{
-    width: 100%;
+    width: 100vw;
     height: 30px;
     background-color: lightsteelblue;
     text-align: center;
     vertical-align: middle;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .text-black {

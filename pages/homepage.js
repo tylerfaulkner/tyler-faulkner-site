@@ -73,7 +73,6 @@ export default function Homepage() {
                     </div>
                     <div className="links">
                         <div className="col image-about github">
-                            <span className="helper"></span>
                             <Image src={github} fill={true} alt="Github Logo" sizes={sizes}/>
                         </div>
                         <div className="col image-about linkedin">
