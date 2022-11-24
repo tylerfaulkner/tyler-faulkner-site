@@ -1,9 +1,13 @@
 .contact {
-    text-align: center;
+    text-align: left;
     vertical-align: middle;
     padding: auto;
     margin: auto;
     width: auto;
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 30px;
 }
 
 .error {
@@ -16,11 +20,49 @@
     width: 60%;
 }
 
+.img-contact {
+    position: relative;
+    height: 100px;
+    width: 400px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.large-side {
+    width: 50%;
+    padding: auto;
+}
+.small-side {
+    width: 45%;
+}
+
+.col-basic {
+    display: inline-block;
+}
+
 #message {
     width: 100%;
+}
+
+.form-info {
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .email-form {
     text-align: center;
     width: 100%;
+    padding: 2%;
+}
+
+#email-info {
+    text-align: left;
+    vertical-align: middle;
+    height: 100%;
+    align-content: center;
 }

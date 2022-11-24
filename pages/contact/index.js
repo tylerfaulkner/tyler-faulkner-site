@@ -1,10 +1,15 @@
 import  React from 'react';
 import emailjs from '@emailjs/browser';
+import github from "../images/github.png"
+import linkedin from "../images/linkedIn.png"
+import Image from "next/image"
+
 
 
 export default function Contact() {
 
     const form = React.useRef();
+    const sizes="(max-width: 768px) 33vw, (max-width: 1200px) 50vw, 100vw"
 
     const validateEmail = (text) => {
         if (text.indexOf('@') > -1 && text.indexOf('.') > -1){
@@ -32,7 +37,16 @@ export default function Contact() {
             console.log("sending email")
             console.log(process.env.NEXT_PUBLIC_SERVICE_ID)
             emailjs.send(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_TEMPLATE_ID, contents, process.env.NEXT_PUBLIC_PUBLIC_KEY)
-            .then((result) => console.log(result));
+            .then((result) => {
+                alert('Email Sent Succesfully!')
+                form.current.email.value = ""
+                form.current.name.value = ""
+                form.current.message.value = ""
+                console.log(result.text);
+            }, (error) => {
+                alert('Error occured please try again.')
+                console.log(error.text);
+            });
         } else {
             if(form.current.email.className.indexOf("error") == -1){
                 console.log("Removing error class");
@@ -44,25 +58,65 @@ export default function Contact() {
 
     
     return (
-        <div className="contact">
-            <div className='content'>
-                <div>
-                    
+        <div className="">
+            <div className='contact'>
+                <div className='small-side'>
+                    <div className='section-header'>Github</div>
+                    <div className='text'>
+                        The source code for nearly all of my projects is available on my Github profile.
+                        Feel free to use any of my code.
+                        Also feel free to fix any bugs you might find.
+                    </div>
                 </div>
-                <form ref={form} onSubmit={sendEmail} className="email-form">
-                    <div>
-                        <label htmlFor="name">Name:</label>
-                        <input type="text" id="name" name="name"/>
+                <div className="large-side">
+                    <div className='flex'>
+                        <div className='img-contact img-about'>
+                            <Image src={github} fill alt="Github Logo" sizes={sizes}/>
+                        </div>
                     </div>
-                    <div>
-                        <label htmlFor="email">Email:</label>
-                        <input type="text" id="email" name="email"/><br/>
-                    </div>
-                    <label htmlFor="message">Message:</label><br/>
-                    <textarea id="message" name="message" rows="20" cols="20"/><br/><br/>
-                    <input type="submit" value="Submit"/>
-                </form>
+                </div>
             </div>
+            <div className='contact'>
+                <div className='small-side'>
+                    <div className='section-header'>LinkedIn</div>
+                    <div className='text'>
+                        Reach out to me on LinkedIn for any professional inquiries.
+                        Feel free to connect with me also.
+                    </div>
+                </div>
+                <div className="large-side">
+                    <div className='flex'>
+                        <div className='img-contact img-about'>
+                            <Image src={linkedin} fill alt="Github Logo" sizes={sizes}/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className='contact'>
+                    <div className='small-side'>
+                        <div className='section-header'>Email Me</div>
+                        <div className='text'>
+                            I would love to hear directly from you! Please use the form to the
+                            right to send an email to me. Feel free to ask me anything or to just send a comment.
+                            I'll repsond to you as soon as I can. :)
+                        </div>
+                    </div>
+                    <div className='large-side'>
+                        <form ref={form} onSubmit={sendEmail} className="email-form">
+                            <div className='form-info col-basic'>
+                                <label htmlFor="name">Name:</label>
+                                <input type="text" id="name" name="name"/>
+                            </div>
+                            <div className='form-info col-basic'>
+                                <label htmlFor="email">Email:</label>
+                                <input type="text" id="email" name="email"/><br/>
+                            </div> <br/>
+                            <label htmlFor="message">Message:</label><br/>
+                            <textarea id="message" name="message" rows="10" cols="20"/><br/>
+                            <input type="submit" value="Submit"/>
+                        </form>
+                    </div>
+                </div>
         </div>
     )
 }
