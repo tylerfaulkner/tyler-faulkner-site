@@ -2,6 +2,7 @@ import TopBar from "./topbar";
 import "./main.css";
 import "./topbar.css";
 import "./contact/index.css";
+import "./projects/projects.css"
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {

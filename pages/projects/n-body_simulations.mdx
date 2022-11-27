@@ -1,0 +1,79 @@
+import Layout from './Layout.js'
+import Image from "next/image"
+import example_output from "./images/n-body/example-output.png"
+import thumb from "./images/thumbnail.jpg"
+
+export const meta = {
+  title: 'N-Body Simulations',
+  authors: "Tyler Faulkner, David Jin, Garin Jankowski, Nicholas Dang",
+  description: 'With my team, I created a N-Body simulation in CUDA with profiling results comparing the GPU and CPU implementations. I also created renderings of the simulations in MatPlotLib and Manim.',
+  image: thumb,
+  date: {
+    day: 5,
+    month: 7,
+    year: 2022,
+  },
+  readTime: 10
+}
+
+export default ({ children }) => <Layout meta={meta} content={children}/>
+
+# N-Body Simulations
+
+## INTRODUCTION
+In physics, the n-body problem is the problem predicting the individual motions of a group of celestial objects interacting with each other gravitationally. Solving this problem is motivated by the desire to understand the motions of the sun, moon, planets, and stars.
+There are three main equations for our algorithm. The first equation is to calculate the acceleration of a body with respect to all other bodies in the system. This equation comes from the NVIDA GPU Gems 3 textbook.1
+This equation is derived from the equation for force. The epsilon squared factor represents the dampening factor to prevent values from going to infinity. We get acceleration from force by dividing by mass. Finally, our team will not be using the gravitational constant since the values we will be using in our simulation are relative and do not represent real-world distances or masses.
+We will also be using leapfrog integration to obtain the change in velocity and the change in position. Using the calculated acceleration above, we multiply that by the amount of time to pass which is 0.25 in our simulation, and then add that value to the current velocity. The same logic is then applied to position using the newly calculated velocity.
+𝑉𝑛𝑒𝑤=𝑉𝑜𝑙𝑑 + 𝐴⋅𝑑𝑡 𝑃𝑛𝑒𝑤=𝑃𝑜𝑙𝑑 + 𝑉𝑛𝑒𝑤⋅𝑑𝑡
+EXAMPLE OUTPUT
+To run our n-body simulation, the number of bodies must be passed in as well as the number of steps for the simulation to run seen below.
+The CPU implementation outputs a csv file after the bodies’ positions are updated at the end of each time step. These csv files are comprised of a row for each body with the columns representing the
+<Image src={example_output}/>
+body’s x, y, z, and mass respectively. These csv files are then iterated over to create the renderings. Below is an embedded video of one of the renderings. A playlist has been created with 3 different videos using various rendering libraries and amount of bodies 150 Body MatPlotLib Simulation - YouTube
+CPU IMPLEMENTATION
+The CPU implementation has 3 nested for loops. The outermost for loop iterates over each time step until the maximum number of steps. The outer loop computes all the bodies’ accelerations, then velocities, then positions in series. The acceleration computation contains 2 of the nested for loops, one to iterate over everybody, the inner loop to iterate over all bodies again to calculate the current outer loop body’s acceleration. This happens in O(n^2) time. The velocity and position functions iterate over each body to perform the leapfrog iterations. These functions happen in n time. The final time equation would be T(n) = k*(n^2 + 2n) where k is the number of steps. K can be seen as a constant thus the final time analysis is O(n^2).
+The randomization of the starting positions is also done on the CPU since it seemed overly complicated set up and initialization for the limited scope of this single function.
+3
+3
+The largest bottleneck in the CPU code is the computation of the bodies’ accelerations which is forcing the time complexity to be O(n^2). Parallelizing this should be straight forward and would reduce the largest bottleneck of the CPU implementation.
+PARALLEL IMPLEMENTATION
+N-body simulations are an inherently parallelable problem due to each body's acceleration calculation being independent of other bodies' acceleration calculation. This means that each body can be represented on a single thread. This would bring the runtime of O(n^2) down to O(n) since now each body’s acceleration will be calculated in parallel.
+The loop that iterates over each time step of the CUDA implementation was left on the CPU and runs the calculate_forces, calculate_velocity, and calculate_position kernels in order. This was done to ensure that the acceleration was calculated for every body before a body's position was modified.
+CALCULATE FORCES KERNELS
+The below 2 methods are our implementation for calculating the forces for each body using tiling. With this, we load the positions and accelerations into global memory and do the body-body interaction calculations in tiles. This is a modified version of implementation found in GPU Gem 3.1 The main differences our team included were more boundary checks to avoid illegal memory access errors we experienced while debugging the code.
+4
+4
+For our tile less implementation, acceleration for each body in the simulation is calculated in parallel where each thread will calculate the total acceleration for the body using our body-body interaction method.
+5
+5
+CALCULATE VELOCITY KERNEL
+Next, from the net accelerations calculated for each n-body, we performed a leapfrog integration to calculate the velocities by multiplying the acceleration vectors by our time step of 0.25 and adding it to the updated velocity vectors for a particular n-body. This works in parallel where each thread will calculate the updated velocity for a particular n-body.
+CALCULATE POSITION KERNEL
+Lastly, positions for each n-body were calculated where each thread calculated the new updated position of a certain n-body using leapfrog integration again.
+6
+6
+PROFILING AND BOTTLENECKS
+OVERALL RUNTIME RESULTS (LOG SCALE)
+TILED VS. NON-TILED RESULTS
+ANALYSIS
+Our current bottlenecks that we have could be the tiled implementation of calculating forces. As seen in our profiling, our tiling GPU performance is faster than the CPU implementation, however, it is slower than our GPU implementation without tiling. We did not have enough time to discover the reason for this, even after a thorough debugging of our code and a deep code analysis. One issue may have been the inclusion of the extra branches which may be forcing the GPU to run in serial. One thing
+7
+7
+to note is the GPU Gems textbook contained little to no explanation for launching the code and what the global variables should be set to, so we may be launching the kernel slightly incorrectly which also may be slowing it down. Interesting, however, is that consistently when our application is run through compute-sanitizer, our non-tiled kernel runs much slower than the tiled version.
+Another interesting note is that the runtime increases at a much higher rate for the non-tiled implementation compared to the tiled version. When comparing the compute-sanitizer run to the program normally, the tiled version only increased about 4000 milliseconds while the non-tiled implementation increased over 10,000 milliseconds shown below.
+While our team did not reach a conclusion to this discrepancy, if there was more time for the project, we would pursue the answer for this next.
+PITFALLS AND CHALLENGES
+One of the main challenges our team noticed while beginning our profiling was that the final CPU results and the final GPU results showed to diverge more with an increase in the amount of floating-point calculations, either through more bodies or more steps. This can be seen in the chart below.
+8
+8
+Through some quick internet research, we found that one potential reason for this divergence may be due to the fundamental differences between the CPU and GPU hardware. The GPU performs floating point operations in either 32-bit or 64-bit mode with respect to either single or double precision. The CPU on the other hand uses an 80-bit intermediate for floating operations since Roise’s CPU is x86 based as seen below.1
+Another possible explanation for the differences in the floating-point numbers is due to the GPU use of the Fused Multiply-Add optimization. Instead of computing a multiply then and add and rounding after each operation, a fused-multiply add performs both the multiply then the add and only rounds after both have completed.2
+Our team believes that the divergence of results is due to a combination of architecture differences and the GPU’s use of Fused Multiply-Add.
+Rendering speed could be improved by loading our results from our n-body simulation into a visualization tool. With the tools that we used to visualize our n bodies, the time it takes to load it takes a very long time, as seen in our Manim render of 4096 bodies which took ~18 hours. We could play around with other visualizing libraries or different ways to store the results such as storing each frame in a single csv as opposed to separate CSVs. Most likely, the best way to visualize this would be to use a graphics API like OpenGL or Vulkan; however, our team did not believe we would have the time to learn this technology for the project.
+CITATIONS
+1Chapter 31. Fast N-Body Simulation with CUDA | NVIDIA Developer
+9
+9
+2Floating point operations difference between CPU and GPU - CUDA / CUDA Programming and Performance - NVIDIA Developer Forums
+3Multiply–accumulate operation - Wikipedia

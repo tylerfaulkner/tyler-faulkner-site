@@ -1,0 +1,82 @@
+.grid {
+    display: grid;
+    gap: 3.5%;
+    grid-template-columns: 31% 31% 31%;
+    margin-top: 10px;
+}
+
+.img-header {
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: -5px;
+    width: 105vw;
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    z-index: -1;
+    filter: blur(8px);
+}
+
+#article {
+    margin-top: 250px;
+    background-color: white;
+    padding-left: 15%;
+    padding-right: 15%;
+    border-top: 3px solid;
+}
+
+.card-content {
+    padding: 3px;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.thumbnail {
+    position: relative;
+    height: 175px;
+    width: 100%;
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.outergrid {
+    padding-top: 10px;
+    padding-left: 12%;
+    padding-right: 12%;
+}
+
+.card {
+    z-index: 1;
+    height: 350px;
+    border-color: black;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.card-title {
+    font-size: 1.75em;
+    font-family: 'Roboto Mono', sans-serif;
+    padding-top: 10px;
+}
+
+.card-info {
+    bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75em;
+    padding-bottom: 3px;
+    padding-bottom: 6px;
+}
+
+.description {
+    padding-bottom: 10px;
+}
+
+.view-options {
+    margin-top: 20px;
+}
