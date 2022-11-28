@@ -4,6 +4,7 @@ import project_pic from "./images/projects.PNG"
 import tutorials from "./images/tutorials.png"
 import github from "./images/github.png"
 import linkedin from "./images/linkedIn.png"
+import Link from "next/link"
 
 export default function Homepage() {
     const sizes="(max-width: 768px) 33vw, (max-width: 1200px) 50vw, 100vw"
@@ -33,9 +34,11 @@ export default function Homepage() {
                 </div>
                 <div className="col text-area">
                     <div className="header">
-                        <div className="section-header">
-                            Projects
-                        </div>
+                        <Link href={'/projects'}>
+                            <div className="section-header">
+                                Projects
+                            </div>
+                        </Link>
                     </div>
                     <div className="text fade-in">
                         Explore high-level overviews of some of my favorite personal and school projects.
@@ -47,9 +50,11 @@ export default function Homepage() {
             <div className="section tutorials fade-in">
                 <div className="col text-area">
                     <div className="header">
-                        <div className="section-header">
-                            Tutorials
-                        </div>
+                        <Link href='/tutorials'>
+                            <div className="section-header">
+                                Tutorials
+                            </div>
+                        </Link>
                     </div>
                     <div className="text fade-in">
                         One of the primary ways I learn new technologies is through guides I find online. 
@@ -64,20 +69,26 @@ export default function Homepage() {
             </div>
             <div className="section about fade-in">
                 <div className="col about-container">
-                    <div className="section-header">
-                        Reach Out
-                    </div>
+                    <Link href={'/contact'}>
+                        <div className="section-header">
+                            Reach Out
+                        </div>
+                    </Link>
                     <div className="text text-about">
                         I would love to hear from you! If you have a professional inquiry please reach out on LinkedIn.
                         If you have any tutorial suggestion or comments please send me an email by clicking the header above.
                     </div>
                     <div className="links">
-                        <div className="col image-about github">
-                            <Image src={github} fill={true} alt="Github Logo" sizes={sizes}/>
-                        </div>
-                        <div className="col image-about linkedin">
-                            <Image src={linkedin} fill={true} alt="LinkedIn Logo" sizes={sizes}/>
-                        </div>
+                        <Link href='https://github.com/tylerfaulkner'>
+                            <div className="col image-about github">
+                                <Image src={github} fill={true} alt="Github Logo" sizes={sizes}/>
+                            </div>
+                        </Link>
+                        <Link href='https://www.linkedin.com/in/tyler-faulkner/'>
+                            <div className="col image-about linkedin">
+                                <Image src={linkedin} fill={true} alt="LinkedIn Logo" sizes={sizes}/>
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </div>

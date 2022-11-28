@@ -1,0 +1,20 @@
+import Layout from '../Layout.js'
+import thumbnail from './images/personal_website/thumbnail.png'
+
+export const meta = {
+  title: 'My Personal Website',
+  description: 'This website you are on was created using Next.JS and running as an Azure web app.',
+  image: thumbnail,
+  date: {
+    day: 29,
+    month: 11,
+    year: 2022,
+  },
+  readTime: 10
+}
+
+export default ({ children }) => <Layout meta={meta} content={children}/>
+
+# My Personal Website
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus pellentesque dolor non egestas. In sed tristique elit. Cras vehicula, nisl vel ultricies gravida, augue nibh laoreet arcu, et tincidunt augue dui non elit. Vestibulum semper posuere magna, quis molestie mauris faucibus ut.

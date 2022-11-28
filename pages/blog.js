@@ -4,18 +4,11 @@ import { dateToText } from './processors';
 import Thumbnails from './thumbnails';
 import React, { useState } from 'react';
 
-
-const orderFunctions = {
-    newest: function(a,b){return a.meta.date.year - b.meta.date.year},
-    oldest: function(a,b){return b.meta.date.year - a.meta.date.year},
-    shortest: function(a,b){return a.meta.readTime - b.meta.readTime},
-    longest: function(a,b){return b.meta.readTime - a.meta.readTime}
-}
-
 export default function Blog(props) {
-    const { items } = props
+    const { items, dir } = props
     const [sort, setSort] = useState('newest')
     function reorder(evt){
+        console.log('Sorting...')
         let selection = document.getElementById("order");
         setSort(selection.value)
     }
@@ -32,7 +25,7 @@ export default function Blog(props) {
                     </select>
                 </div>
             </div>
-            <Thumbnails items={items} sort={sort}/>
+            <Thumbnails items={items} sort={sort} dir={dir}/>
         </div>
     )
 }

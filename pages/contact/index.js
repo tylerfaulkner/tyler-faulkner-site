@@ -3,8 +3,7 @@ import emailjs from '@emailjs/browser';
 import github from "../images/github.png"
 import linkedin from "../images/linkedIn.png"
 import Image from "next/image"
-
-
+import Link from "next/link"
 
 export default function Contact() {
 
@@ -70,9 +69,11 @@ export default function Contact() {
                 </div>
                 <div className="large-side">
                     <div className='flex'>
-                        <div className='img-contact img-about'>
-                            <Image src={github} fill alt="Github Logo" sizes={sizes}/>
-                        </div>
+                        <Link href='https://github.com/tylerfaulkner'>
+                            <div className='img-contact img-about'>
+                                <Image src={github} fill alt="Github Logo" sizes={sizes}/>
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -86,9 +87,11 @@ export default function Contact() {
                 </div>
                 <div className="large-side">
                     <div className='flex'>
-                        <div className='img-contact img-about'>
-                            <Image src={linkedin} fill alt="Github Logo" sizes={sizes}/>
-                        </div>
+                        <Link href='https://www.linkedin.com/in/tyler-faulkner/'>
+                            <div className='img-contact img-about'>
+                                <Image src={linkedin} fill alt="LinkedIn Logo" sizes={sizes}/>
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </div>

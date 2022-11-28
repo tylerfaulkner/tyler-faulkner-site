@@ -3,19 +3,38 @@ import Image from "next/image";
 import { dateToText } from './processors';
 import React, { useState } from 'react';
 
+function sortDate(a, b) {
+    console.log('Sorting by date...')
+    let yearA = a.meta.date.year;
+    let yearB = b.meta.date.year;
+
+    if(yearA != yearB){
+        return yearA-yearB;
+    }
+
+    let monthA = a.meta.date.month;
+    let monthB = a.meta.date.month;
+
+    if(monthA != monthB){
+        return monthA-monthB;
+    }
+
+    return a.meta.date.day - b.meta.date.day;
+}
+
 const orderFunctions = {
-    newest: function(a,b){return a.meta.date.year - b.meta.date.year},
-    oldest: function(a,b){return b.meta.date.year - a.meta.date.year},
+    newest: function(a,b){return sortDate(b, a)},
+    oldest: function(a,b){return sortDate(a, b)},
     shortest: function(a,b){return a.meta.readTime - b.meta.readTime},
     longest: function(a,b){return b.meta.readTime - a.meta.readTime}
 }
 
 export default function Thumbnails(props) {
-    const {items, sort} = props
+    const {items, sort, dir} = props
 
     let divs = items.sort(orderFunctions[sort]).map(item => {
         return(
-        <Link href={`./projects/${item.id}`}>
+        <Link href={`./${dir}/${item.id}`}>
             <div className='card'>
                 <div className='thumbnail'><Image src={item.meta.image} fill/></div>
                 <div className='card-content'>

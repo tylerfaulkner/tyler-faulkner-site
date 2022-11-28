@@ -1,4 +1,4 @@
-import Layout from './Layout.js'
+import Layout from '../Layout.js'
 import Image from "next/image"
 import example_output from "./images/n-body/example-output.png"
 import thumb from "./images/thumbnail.jpg"
@@ -9,11 +9,11 @@ export const meta = {
   description: 'With my team, I created a N-Body simulation in CUDA with profiling results comparing the GPU and CPU implementations. I also created renderings of the simulations in MatPlotLib and Manim.',
   image: thumb,
   date: {
-    day: 5,
-    month: 7,
+    day: 14,
+    month: 11,
     year: 2022,
   },
-  readTime: 10
+  readTime: 20
 }
 
 export default ({ children }) => <Layout meta={meta} content={children}/>
@@ -21,12 +21,20 @@ export default ({ children }) => <Layout meta={meta} content={children}/>
 # N-Body Simulations
 
 ## INTRODUCTION
-In physics, the n-body problem is the problem predicting the individual motions of a group of celestial objects interacting with each other gravitationally. Solving this problem is motivated by the desire to understand the motions of the sun, moon, planets, and stars.
-There are three main equations for our algorithm. The first equation is to calculate the acceleration of a body with respect to all other bodies in the system. This equation comes from the NVIDA GPU Gems 3 textbook.1
-This equation is derived from the equation for force. The epsilon squared factor represents the dampening factor to prevent values from going to infinity. We get acceleration from force by dividing by mass. Finally, our team will not be using the gravitational constant since the values we will be using in our simulation are relative and do not represent real-world distances or masses.
-We will also be using leapfrog integration to obtain the change in velocity and the change in position. Using the calculated acceleration above, we multiply that by the amount of time to pass which is 0.25 in our simulation, and then add that value to the current velocity. The same logic is then applied to position using the newly calculated velocity.
+In physics, the n-body problem is the problem predicting the individual motions of a group of celestial objects interacting with each other gravitationally. 
+Solving this problem is motivated by the desire to understand the motions of the sun, moon, planets, and stars.
+There are three main equations for our algorithm. The first equation is to calculate the acceleration of a body with respect to all other bodies in the system. 
+This equation comes from the NVIDA GPU Gems 3 textbook.1
+
+This equation is derived from the equation for force. The epsilon squared factor represents the dampening factor to prevent values from going to infinity.
+ We get acceleration from force by dividing by mass. Finally, our team will not be using the gravitational constant since the values we will be using in our simulation
+  are relative and do not represent real-world distances or masses.
+We will also be using leapfrog integration to obtain the change in velocity and the change in position. Using the calculated acceleration above, 
+we multiply that by the amount of time to pass which is 0.25 in our simulation, and then add that value to the current velocity. The same logic is then applied to position using the newly calculated velocity.
+
 𝑉𝑛𝑒𝑤=𝑉𝑜𝑙𝑑 + 𝐴⋅𝑑𝑡 𝑃𝑛𝑒𝑤=𝑃𝑜𝑙𝑑 + 𝑉𝑛𝑒𝑤⋅𝑑𝑡
-EXAMPLE OUTPUT
+
+### EXAMPLE OUTPUT
 To run our n-body simulation, the number of bodies must be passed in as well as the number of steps for the simulation to run seen below.
 The CPU implementation outputs a csv file after the bodies’ positions are updated at the end of each time step. These csv files are comprised of a row for each body with the columns representing the
 <Image src={example_output}/>

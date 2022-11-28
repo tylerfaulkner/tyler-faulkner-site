@@ -6,24 +6,28 @@
 }
 
 .img-header {
-    height: 300px;
+    height: 600px;
     position: absolute;
-    top: 0;
+    top: 15px;
     left: -5px;
-    width: 105vw;
+    width: 110vw;
     overflow: hidden;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    z-index: -1;
+    z-index: -2;
     filter: blur(8px);
 }
 
-#article {
-    margin-top: 250px;
+.article-page {
+    padding-top: 250px;
+}
+
+.article {
     background-color: white;
     padding-left: 15%;
     padding-right: 15%;
     border-top: 3px solid;
+    height: 70vh;
 }
 
 .card-content {
@@ -36,7 +40,7 @@
 
 .thumbnail {
     position: relative;
-    height: 175px;
+    height: 235px;
     width: 100%;
     overflow: hidden;
     border-top-left-radius: 8px;
@@ -48,10 +52,17 @@
     padding-left: 12%;
     padding-right: 12%;
 }
+.video-box {
+    display: flex;
+    align-content: center;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+}
 
 .card {
     z-index: 1;
-    height: 350px;
+    height: 410px;
     border-color: black;
     border-radius: 10px;
     border-width: 2px;
