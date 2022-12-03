@@ -85,6 +85,7 @@ body {
 
 .section-header {
     font-size: 4em;
+    color: black;
     font-weight: bold;
     font-family: 'Roboto Mono', sans-serif;
 }
@@ -115,8 +116,14 @@ body {
     text-align: left;
 }
 
+.no-decoration {
+    text-decoration: none;
+    color: black;
+}
+
 .header {
     width: fit-content;
+    text-decoration: none;
 }
 
 @keyframes typing {
@@ -136,10 +143,6 @@ body {
 
 .projects{
     background-color: cadetblue;
-}
-
-.tutorials {
-
 }
 
 .about {

@@ -5,6 +5,11 @@
     margin-top: 10px;
 }
 
+.img-article {
+    position: relative;
+    width: 100%;
+}
+
 .img-header {
     height: 600px;
     position: absolute;
@@ -45,6 +50,15 @@
     overflow: hidden;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+}
+
+.equation {
+    font-size: 2.5em;
+}
+
+.centered-even {
+    display: flex;
+    justify-content: space-around;
 }
 
 .outergrid {

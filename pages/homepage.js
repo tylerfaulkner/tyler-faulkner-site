@@ -34,7 +34,7 @@ export default function Homepage() {
                 </div>
                 <div className="col text-area">
                     <div className="header">
-                        <Link href={'/projects'}>
+                        <Link href={'/projects'} className='no-decoration'>
                             <div className="section-header">
                                 Projects
                             </div>
@@ -50,7 +50,7 @@ export default function Homepage() {
             <div className="section tutorials fade-in">
                 <div className="col text-area">
                     <div className="header">
-                        <Link href='/tutorials'>
+                        <Link href='/tutorials' className="no-decoration">
                             <div className="section-header">
                                 Tutorials
                             </div>
@@ -69,7 +69,7 @@ export default function Homepage() {
             </div>
             <div className="section about fade-in">
                 <div className="col about-container">
-                    <Link href={'/contact'}>
+                    <Link href={'/contact'} className='no-decoration'>
                         <div className="section-header">
                             Reach Out
                         </div>
