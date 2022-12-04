@@ -7,31 +7,31 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Main() {
     return(
-                <div class="col pt-3" align="center" style={{height:"100%", position:"fixed"}}>
-                    <div class="row-sm-1 w-50">
-                        <Image src={pic_of_me} class="rounded" />
+                <div className="col pt-3" align="center" style={{height:"100%", position:"fixed"}}>
+                    <div className="row-sm-1 w-50">
+                        <Image src={pic_of_me} className="rounded" />
                     </div>
-                    <div class="p-2">
+                    <div className="p-2">
                         <h1>Tyler Faulkner</h1>
                     </div>
-                    <div class="w-75">
-                        <p class="text-sm-start">I am a computer science major with a minor in mathematics
+                    <div className="w-75">
+                        <p className="text-sm-start">I am a computer science major with a minor in mathematics
                          from the Milwaukee School of Enginerring. At MSOE, I learned to use 
                          machine learning and artificial intelligence to solve data science problems. 
                          Recently, I interned at Cognex where I worked as a devloper on the Sphinx scrum team. 
                          At Cognex, I had the oppurtunity to streamline automated testing procedures, improve the user experience 
                          in UI applications, and implemented new functionality for embedded systems. </p>
                     </div>
-                    <div class="row gx-4 justify-content-center m-0 w-25">
-                        <div class="col">
-                            <a href="https://www.linkedin.com/in/tyler-faulkner/">
-                                <Image src={LinkedinLogo} />
-                            </a>
+                    <div className="row gx-1 justify-content-center m-5 w-75">
+                        <div className="col">
+                            <div href="https://www.linkedin.com/in/tyler-faulkner/" style={{height:'100px', width:'350px', position: 'relative'}}>
+                                <Image src={LinkedinLogo} fill/>
+                            </div>
                         </div>
-                        <div class="col">
-                            <a href="https://github.com/tylerfaulkner">
-                                <Image src={GithubLogo} />
-                            </a>
+                        <div className="col">
+                            <div href="https://github.com/tylerfaulkner" style={{height:'100px', width:'350px', position: 'relative'}}>
+                                <Image src={GithubLogo} fill/>
+                            </div>
                         </div>
                     </div>
                 </div>
