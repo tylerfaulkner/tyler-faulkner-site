@@ -20,8 +20,8 @@ export default function Homepage() {
                     <div className="text fade-in">
                     a programmer with experience in machine learning, embedded systems, and automated testing architectures.
                     I am completing my B.S. in Computer Science with a Minor in Mathematics at the Milwaukee School of Engineering.
-                    My major focuses on the creation of machine learning and artificial intelligence models for large scale data analysis and predictions.
-                    My internship at Cognex allowed my to apply my skills by creating thorough tests for new camera systems and creating new features in user applications.
+                    My major focuses on the creation of machine learning and artificial intelligence models for large scale data analysis and predictions. Over the Summer in 2022, I interned at
+                    Cognex which allowed me to apply my skills by creating thorough tests for new camera systems and creating new features in user applications.
                     </div>
                 </div>
                 <div className="col image-div fade-in-pic">
@@ -43,7 +43,7 @@ export default function Homepage() {
                     <div className="text fade-in">
                         Explore high-level overviews of some of my favorite personal and school projects.
                         The image to the left is from a rendering of my N-Body simulation project for my GPU Programming course.
-                        Click on the image to read about my N-Body Simulation project or click the header to read about other projects.
+                        Click on the image to read about my N-Body Simulation project or click the header above to see all of my projects.
                     </div>
                 </div>
             </div>
@@ -58,13 +58,15 @@ export default function Homepage() {
                     </div>
                     <div className="text fade-in">
                         One of the primary ways I learn new technologies is through guides I find online. 
-                        I want to contirbute my knowledge and skills by creating my own tutorials. 
-                        Topics will range from game development, to data analysis, to CUDA programming.
+                        I want to contirbute my knowledge and skills to this pool of online knowledge by creating my own tutorials. 
+                        Tutorial topics will range from game development, to data analysis, to CUDA programming, and more.
                         Click on the image or the header to see my tutorials.
                     </div>
                 </div>
                 <div className="col image-div">
-                    <Image src={tutorials} fill={true} alt="Image of random code" sizes={sizes}/>
+                    <Link href='/tutorials' className="no-decoration">
+                        <Image src={tutorials} fill={true} alt="Image of random code" sizes={sizes}/>
+                    </Link>
                 </div>
             </div>
             <div className="section about fade-in">
@@ -75,7 +77,8 @@ export default function Homepage() {
                         </div>
                     </Link>
                     <div className="text text-about">
-                        I would love to hear from you! If you have a professional inquiry please reach out on LinkedIn.
+                        I would love to hear from you! If you have a professional inquiry please reach out on LinkedIn. If you want to explore 
+                        the source code of any of my projects, feel free to explore my github profile.
                         If you have any tutorial suggestion or comments please send me an email by clicking the header above.
                     </div>
                     <div className="links">

@@ -26,11 +26,11 @@ export default function projects({items, ...props}) {
         <div className='outergrid'>
             <div className='section-header'>Projects</div>
             <div className='text'>
-                Here you can find many of the projects I have worked on over the years.
-                While there may be some explanation on how I achieved the final results,
-                these are primarilary high level overviews discussing the final outcomes and results.
+                Here you can find many of the technical projects I have worked on over the years.
+                These are primarily high level overviews discussing the final outcomes and results, so these posts
+                are not guaranteed to include the specific details nor code of how I achieved the final product.
                 The topics of these projects will range from AI and machine learning, to game development, to 
-                web development.
+                web development, and more.
             </div>
             <Blog items={items} dir={'projects'}/>
         </div>

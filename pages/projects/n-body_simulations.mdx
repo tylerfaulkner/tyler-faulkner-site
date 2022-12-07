@@ -78,10 +78,10 @@ We will also be using leapfrog integration to obtain the change in velocity and 
 we multiply that by the amount of time to pass which is 0.25 in our simulation, and then add that value to the current velocity. The same logic is then applied to position using the newly calculated velocity.
 
 <div className='centered-even'>
-  <div className='equation'>
+  <div className='equation-small'>
     $$ V_{new} = V_{old} + A*dt $$
   </div>
-  <div className='equation'>
+  <div className='equation-small'>
     $$ P_{new} = P_{old} + V_{new} * dt $$
   </div>
 </div>
@@ -260,7 +260,7 @@ One of the main challenges our team noticed while beginning our profiling was th
 Through some quick internet research, we found that one potential reason for this divergence may be due to the fundamental differences between the CPU and GPU hardware. The GPU performs floating point operations in either 32-bit or 64-bit mode with respect to either single or double precision. 
 The CPU on the other hand uses an 80-bit intermediate for floating operations since Roise’s CPU is x86 based as seen below.<sup>1</sup>
 <div className='centered-even'>
-  <div style={{height: '300px', width: '450px', position:'relative'}}>
+  <div style={{height: '60px', width: '450px', position:'relative'}}>
     <Image src={architecture} fill/>
   </div>
 </div>
@@ -269,6 +269,8 @@ Instead of computing a multiply then and add and rounding after each operation, 
 Our team believes that the divergence of results is due to a combination of architecture differences and the GPU’s use of Fused Multiply-Add.
 Rendering speed could be improved by loading our results from our n-body simulation into a visualization tool. With the tools that we used to visualize our n bodies, the time it takes to load it takes a very long time, as seen in our Manim render of 4096 bodies which took ~18 hours. We could play around with other visualizing libraries or different ways to store the results such as storing each frame in a single csv as opposed to separate CSVs. Most likely, the best way to visualize this would be to use a graphics API like OpenGL or Vulkan; however, our team did not believe we would have the time to learn this technology for the project.
 ## CITATIONS
-<sup>1</sup>(Chapter 31. Fast N-Body Simulation with CUDA | NVIDIA Developer)[https://developer.nvidia.com/gpugems/gpugems3/part-v-physics-simulation/chapter-31-fast-n-body-simulation-cuda]
-<sup>2</sup>(Floating point operations difference between CPU and GPU - CUDA / CUDA Programming and Performance - NVIDIA Developer Forums)[https://forums.developer.nvidia.com/t/floating-point-operations-difference-between-cpu-and-gpu/27334]
-<sup>3</sup>(Multiply–accumulate operation - Wikipedia)[https://en.wikipedia.org/wiki/Multiply%E2%80%93accumulate_operation#Fused_multiply.E2.80.93add]
+<sup>1</sup>[Chapter 31. Fast N-Body Simulation with CUDA | NVIDIA Developer](https://developer.nvidia.com/gpugems/gpugems3/part-v-physics-simulation/chapter-31-fast-n-body-simulation-cuda)
+
+<sup>2</sup>[Floating point operations difference between CPU and GPU - CUDA / CUDA Programming and Performance - NVIDIA Developer Forums](https://forums.developer.nvidia.com/t/floating-point-operations-difference-between-cpu-and-gpu/27334)
+
+<sup>3</sup>[Multiply–accumulate operation - Wikipedia](https://en.wikipedia.org/wiki/Multiply%E2%80%93accumulate_operation#Fused_multiply.E2.80.93add)

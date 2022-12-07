@@ -63,8 +63,8 @@ export default function Contact() {
                     <div className='section-header'>Github</div>
                     <div className='text'>
                         The source code for nearly all of my projects is available on my Github profile.
-                        Feel free to use any of my code.
-                        Also feel free to fix any bugs you might find.
+                        You are welcome to use all of my code it should all be under the MIT license.
+                        Also, feel free to fix any bugs you might find.
                     </div>
                 </div>
                 <div className="large-side">
@@ -89,7 +89,7 @@ export default function Contact() {
                     <div className='flex'>
                         <Link href='https://www.linkedin.com/in/tyler-faulkner/'>
                             <div className='img-contact img-about'>
-                                <Image src={linkedin} fill alt="LinkedIn Logo" sizes={sizes}/>
+                                <Image src={linkedin} layout="fill" alt="LinkedIn Logo" sizes={sizes}/>
                             </div>
                         </Link>
                     </div>
@@ -101,7 +101,7 @@ export default function Contact() {
                         <div className='text'>
                             I would love to hear directly from you! Please use the form to the
                             right to send an email to me. Feel free to ask me anything or to just send a comment.
-                            I'll repsond to you as soon as I can. :)
+                            I'll respond to you as soon as I can.
                         </div>
                     </div>
                     <div className='large-side'>

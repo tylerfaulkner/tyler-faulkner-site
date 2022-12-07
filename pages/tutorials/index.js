@@ -30,8 +30,8 @@ export default function projects({items, ...props}) {
             <div className='text'>
                 Here you can find the programming and game development tutorials I have created. 
                 These tutorials will include step by step instructions and thorough code analysis to ensure
-                you the reader understands what each line is doing. Some of the tutorials will have an 
-                accompying video on my YouTube channel.
+                clarity and understanding of the code. Some of the tutorials will have an 
+                accompanying video on my YouTube channel for those who prefer visual instructions.
             </div>
             <Blog items={items} dir={'tutorials'}/>
         </div>

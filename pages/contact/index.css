@@ -26,6 +26,13 @@
     width: 400px;
 }
 
+@media screen and (max-width: 1000px){
+    .img-contact {
+        height: 75px;
+        width: 300px;
+    }
+}
+
 .flex {
     display: flex;
     justify-content: center;
