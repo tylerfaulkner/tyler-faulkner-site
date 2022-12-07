@@ -1,0 +1,133 @@
+.grid {
+    display: grid;
+    gap: 3.5%;
+    grid-template-columns: 31% 31% 31%;
+    margin-top: 10px;
+}
+
+.img-article {
+    position: relative;
+    width: 100%;
+}
+
+.img-header {
+    height: 600px;
+    position: absolute;
+    top: 15px;
+    left: -5px;
+    width: 110vw;
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    z-index: -2;
+    filter: blur(8px);
+}
+
+.article-page {
+    padding-top: 250px;
+}
+
+.article {
+    background-color: white;
+    padding-left: 15%;
+    padding-right: 15%;
+    border-top: 3px solid;
+    height: 70vh;
+    padding-bottom: 50px;
+}
+
+.card-content {
+    padding: 3px;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.thumbnail {
+    position: relative;
+    height: 235px;
+    width: 100%;
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.equation {
+    font-size: 2.5em;
+}
+
+.equation-small {
+    font-size: 2em;
+}
+
+@media  screen and (max-width: 1100px) {
+    .equation{
+        font-size: 1.5em;
+    }
+    .equation-small{
+        font-size: 1em;
+    }
+}
+
+.centered-even {
+    display: flex;
+    justify-content: space-around;
+}
+
+.outergrid {
+    padding-top: 10px;
+    padding-left: 12%;
+    padding-right: 12%;
+}
+.video-box {
+    display: flex;
+    align-content: center;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    z-index: 1;
+    height: 410px;
+    border-color: black;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+}
+
+@media screen and (max-width: 1200px) {
+    .card {
+        height: 440px;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .card {
+        height: 500px;
+    }
+}
+
+.card-title {
+    font-size: 1.75em;
+    font-family: 'Roboto Mono', sans-serif;
+    padding-top: 10px;
+}
+
+.card-info {
+    bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75em;
+    padding-bottom: 3px;
+    padding-bottom: 6px;
+}
+
+.description {
+    padding-bottom: 10px;
+}
+
+.view-options {
+    margin-top: 20px;
+}

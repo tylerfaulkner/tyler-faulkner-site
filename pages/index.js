@@ -1,8 +1,7 @@
-import Head from 'next/head'
-import Main from './main'
+import Homepage from "./homepage";
 
 export default function Home() {
-  return (
-    <Main></Main>
-  )
+    return (
+        <Homepage/>
+    );
 }

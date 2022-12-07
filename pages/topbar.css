@@ -1,0 +1,35 @@
+.topnav{
+    width: 100vw;
+    height: 30px;
+    background-color: lightsteelblue;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.text-black {
+    color: black;
+}
+
+.topelement {
+    text-decoration: none;
+    color: black;
+    margin: 15px;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+text {
+    position: absolute;
+    left: 8px;
+    top: 6px;
+    font-family: "Reenie Beanie", sans-serif;
+}
+
+.elements{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
