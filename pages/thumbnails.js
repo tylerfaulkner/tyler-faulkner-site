@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Image from "next/image";
-import { dateToText } from './processors';
 import React, { useState } from 'react';
 
 function sortDate(a, b) {
@@ -29,6 +28,25 @@ const orderFunctions = {
     longest: function(a,b){return b.meta.readTime - a.meta.readTime}
 }
 
+const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'Septmeber',
+    'October',
+    'Novemeber',
+    'December',
+]
+
+function dateToText(date){
+    return `${months[date.month-1]} ${date.day}, ${date.year}`;
+}
+
 export default function Thumbnails(props) {
     const {items, sort, dir} = props
 
@@ -36,7 +54,7 @@ export default function Thumbnails(props) {
         return(
         <Link href={`./${dir}/${item.id}`} className='no-decoration'>
             <div className='card'>
-                <div className='thumbnail'><Image src={item.meta.image} fill/></div>
+                <div className='thumbnail'><Image src={item.meta.image} alt={`${item.meta.title} image`}fill/></div>
                 <div className='card-content'>
                     <div className='card-title'>{item.meta.title}</div>
                     <div className='description'>{item.meta.description}</div>
