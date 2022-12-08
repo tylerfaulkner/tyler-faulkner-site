@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import React from 'react';
-import Blog from '../blog';
+import Blog from '../../components/blog';
 
 export async function getStaticProps () {
     const root = path.join (process.cwd (), 'pages/projects');

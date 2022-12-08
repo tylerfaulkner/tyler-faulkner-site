@@ -52,7 +52,7 @@ export default function Thumbnails(props) {
 
     let divs = items.sort(orderFunctions[sort]).map(item => {
         return(
-        <Link href={`./${dir}/${item.id}`} className='no-decoration'>
+        <Link key={item.meta.title} href={`./${dir}/${item.id}`} className='no-decoration'>
             <div className='card'>
                 <div className='thumbnail'><Image src={item.meta.image} alt={`${item.meta.title} image`}fill/></div>
                 <div className='card-content'>
