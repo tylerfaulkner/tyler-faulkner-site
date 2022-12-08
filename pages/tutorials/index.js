@@ -1,12 +1,7 @@
 import fs from 'fs/promises';
-import Link from 'next/link';
 import path from 'path';
-import Image from "next/image";
-import React, { useState } from 'react';
-import { consumers } from 'stream';
-import { dateToText } from '../processors';
-import Blog from '../blog';
-import Video from '../video';
+import React from 'react';
+import Blog from '../../components/blog';
 
 export async function getStaticProps () {
     const root = path.join (process.cwd (), 'pages/tutorials');
