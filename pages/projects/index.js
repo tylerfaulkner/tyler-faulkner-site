@@ -1,9 +1,6 @@
 import fs from 'fs/promises';
-import Link from 'next/link';
 import path from 'path';
-import React, { useState } from 'react';
-import { consumers } from 'stream';
-import { dateToText } from '../processors';
+import React from 'react';
 import Blog from '../blog';
 
 export async function getStaticProps () {

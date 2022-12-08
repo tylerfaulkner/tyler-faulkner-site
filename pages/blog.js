@@ -1,6 +1,3 @@
-import Link from 'next/link';
-import Image from "next/image";
-import { dateToText } from './processors';
 import Thumbnails from './thumbnails';
 import React, { useCallback, useState } from 'react';
 
