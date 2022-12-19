@@ -20,7 +20,7 @@ import architecture from './images/n-body/architecture.PNG';
 export const meta = {
   title: 'N-Body Simulations',
   authors: "Tyler Faulkner, David Jin, Garin Jankowski, Nicholas Dang",
-  description: 'With my team, I created a N-Body simulation in CUDA with profiling results comparing the GPU and CPU implementations. I also created renderings of the simulations in MatPlotLib and Manim.',
+  description: 'An N-Body simulation in CUDA with profiling results comparing the GPU and CPU implementations. I also created renderings of the simulations in MatPlotLib and Manim.',
   image: thumb,
   date: {
     day: 14,
@@ -89,7 +89,7 @@ we multiply that by the amount of time to pass which is 0.25 in our simulation, 
 ### EXAMPLE OUTPUT
 To run our n-body simulation, the number of bodies must be passed in as well as the number of steps for the simulation to run seen below.
 <div style={{height: '200px'}} className='img-article'>
-  <Image src={example_output} fill/>
+  <Image src={example_output} sizes='100vw' alt='Example Output' fill/>
 </div>
 The CPU implementation outputs a csv file after the bodies’ positions are updated at the end of each time step. These csv files are comprised of a row for each body with the columns representing the
 body’s x, y, z, and mass respectively. These csv files are then iterated over to create the renderings. Below is an embedded video of one of the renderings. A [playlist](https://www.youtube.com/playlist?list=PLrDtSfk4LWjLDbzzZ6Dkt3EC8Cd_YV9BG) has been created with 3 different videos using various rendering libraries and varying amounts of bodies.
@@ -212,7 +212,7 @@ __global__ void gpu_calculate_position(float4 *d_X, float4 *d_V, int bodyCount, 
 ### OVERALL RUNTIME RESULTS (LOG SCALE)
 <div className='centered-even'>
   <div style={{height: '300px', width: '450px', position:'relative'}}>
-    <Image src={overall_graph} fill/>
+    <Image src={overall_graph} sizes='100vw' alt='' fill/>
   </div>
 </div>
 ### TILED VS. NON-TILED RESULTS

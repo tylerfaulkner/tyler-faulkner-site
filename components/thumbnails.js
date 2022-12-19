@@ -47,6 +47,9 @@ function dateToText(date){
     return `${months[date.month-1]} ${date.day}, ${date.year}`;
 }
 
+const sizes="(max-width: 768px) 350px, (max-width: 900px) 700px, 1080px"
+
+
 export default function Thumbnails(props) {
     const {items, sort, dir} = props
 
@@ -54,7 +57,7 @@ export default function Thumbnails(props) {
         return(
         <Link key={item.meta.title} href={`./${dir}/${item.id}`} className='no-decoration'>
             <div className='card'>
-                <div className='thumbnail'><Image src={item.meta.image} alt={`${item.meta.title} image`}fill/></div>
+                <div className='thumbnail'><Image src={item.meta.image.src} alt={`${item.meta.title} image`} fill/></div>
                 <div className='card-content'>
                     <div className='card-title'>{item.meta.title}</div>
                     <div className='description'>{item.meta.description}</div>

@@ -7,15 +7,22 @@
 
 .img-article {
     position: relative;
+    height: 500px;
     width: 100%;
 }
 
+.img-article img {
+    object-fit: contain;
+}
+
 .img-header {
-    height: 600px;
+    height: 40vh;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100vw;
     position: absolute;
     top: 15px;
     left: -5px;
-    width: 110vw;
     overflow: hidden;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -25,6 +32,7 @@
 
 .article-page {
     padding-top: 250px;
+    overflow-x: hidden;
 }
 
 .article {
@@ -32,7 +40,6 @@
     padding-left: 15%;
     padding-right: 15%;
     border-top: 3px solid;
-    height: 70vh;
     padding-bottom: 50px;
 }
 

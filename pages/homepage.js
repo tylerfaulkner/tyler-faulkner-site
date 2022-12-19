@@ -11,10 +11,12 @@ export default function Homepage() {
     return (
         <div>
             <div className="section overview">
-                <div className="col text-area">
+                <div className="text-area">
                     <div className="header">
-                        <div className="typed-out">
-                            Hi, I'm Tyler
+                        <div className="fit-content-width">
+                            <div className="typed-out">
+                                Hi, I'm Tyler
+                            </div>
                         </div>
                     </div>
                     <div className="text fade-in">
@@ -24,7 +26,7 @@ export default function Homepage() {
                     Cognex which allowed me to apply my skills by creating thorough tests for new camera systems and creating new features in user applications.
                     </div>
                 </div>
-                <div className="col image-div fade-in-pic">
+                <div id='pic-of-me' className="image-div fade-in-pic">
                     <Image src={me_cropped} fill={true} alt="Image of Tyler" sizes={sizes}/>
                 </div>
             </div>

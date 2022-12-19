@@ -1,8 +1,9 @@
-import TopBar from "./topbar";
+import TopBar from "../components/topbar";
 import "./main.css";
 import "./topbar.css";
 import "./contact/index.css";
 import "./projects/projects.css"
+import "./mobile.css"
 import "./prism-vsc-dark-plus.css"
 
 // This default export is required in a new `pages/_app.js` file.
