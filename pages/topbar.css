@@ -6,6 +6,9 @@
     vertical-align: middle;
     overflow: hidden;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .text-black {
@@ -32,4 +35,24 @@ text {
 .elements{
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+.mr {
+    margin-right: 1%;
+}
+
+.nav-menu {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    border: 1px solid black;
+    text-align: right;
+    background-color: lightsteelblue;
+    font-size: 2em;
+    border-collapse: collapse;
+    z-index: 5;
+}
+
+.nav-menu tr {
+    border: 1px solid black;
 }
