@@ -37,7 +37,6 @@ export default function TopBar() {
             {isMobile==null ? <div></div> : !isMobile ? <div className="elements">
                 <Link href={"/"} className="topelement">Home</Link>
                 <Link href={"/projects"} className="topelement">Projects</Link>
-                <Link href={"/tutorials"} className="topelement">Tutorials</Link>
                 <Link href={"/contact"} className="topelement">Contact</Link>
             </div>  : 
             <a onClick={click}>
@@ -57,11 +56,6 @@ export default function TopBar() {
                 <tr onClick={onChange}>
                     <td id='/projects'>
                         Projects
-                    </td>
-                </tr>
-                <tr onClick={onChange}>
-                    <td id='/tutorials'>
-                        Tutorials
                     </td>
                 </tr>
                 <tr onClick={onChange}>

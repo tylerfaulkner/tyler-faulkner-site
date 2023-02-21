@@ -67,6 +67,13 @@
     .img-article {
         height: 250px;
     }
+    body::-webkit-scrollbar {
+        display: none;
+    }
+    body {
+        -ms-overflow-style: none;
+        scrollbar-width : none;
+    }
     
 }
 
@@ -83,6 +90,13 @@
 
     .img-article {
         height: 200px;
+    }
+    body::-webkit-scrollbar {
+        display: none;
+    }
+    body {
+        -ms-overflow-style: none;
+        scrollbar-width : none;
     }
 }
 
