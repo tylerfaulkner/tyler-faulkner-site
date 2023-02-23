@@ -83,6 +83,10 @@
     .image-div{
         order: 1;
     }
+    .text-about {
+        justify-content: left;
+        text-align: left;
+    }
     
 }
 
@@ -149,5 +153,9 @@
     }
     .img-contact {
         margin-top: 5px;
+    }
+    .text-about {
+        justify-content: left;
+        text-align: left;
     }
 }
