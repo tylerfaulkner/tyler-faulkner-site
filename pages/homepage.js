@@ -91,18 +91,6 @@ export default function Homepage() {
                             the source code of any of my projects, feel free to explore my github profile.
                             If you have any tutorial suggestion or comments please send me an email by clicking the header above.
                         </div>
-                        <div className="links">
-                            <Link href='https://github.com/tylerfaulkner'>
-                                <div className="col image-about github">
-                                    <Image src={github} fill={true} alt="Github Logo" sizes={sizes}/>
-                                </div>
-                            </Link>
-                            <Link href='https://www.linkedin.com/in/tyler-faulkner/'>
-                                <div className="col image-about linkedin">
-                                    <Image src={linkedin} fill={true} alt="LinkedIn Logo" sizes={sizes}/>
-                                </div>
-                            </Link>
-                        </div>
                     </div>
                 </div>
             </div>
