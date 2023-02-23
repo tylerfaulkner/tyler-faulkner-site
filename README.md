@@ -7,6 +7,6 @@ Libraries:
 - MailJS
 
 Install:
-- (Node.JS)[def]
+- [Node.js]
 
-[def]: https://nodejs.org/en/download/
+[Node.js]: https://nodejs.org/en/download/
