@@ -54,6 +54,13 @@ export default function TopBar() {
                         Home
                     </td>
                 </tr>
+                <tr>
+                <a download href='/Tyler Faulkner Resume 2023.pdf' className="no-decoration">
+                    <td id='/Tyler Faulkner Resume 2023.pdf'>
+                        Resume
+                    </td>
+                </a>
+                </tr>
                 <tr onClick={onChange}>
                     <td id='/projects'>
                         Projects
