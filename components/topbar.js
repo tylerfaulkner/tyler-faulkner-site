@@ -33,9 +33,10 @@ export default function TopBar() {
 
     return (
         <div className="topnav">
-            <text className="text-black">tyler faulkner</text>
+            <text className="text-black"><Link href={'/'}>tyler faulkner</Link></text>
             {isMobile==null ? <div></div> : !isMobile ? <div className="elements">
                 <Link href={"/"} className="topelement">Home</Link>
+                <Link href={"/Tyler Faulkner Resume 2023.pdf"} className="topelement"> Resume </Link>
                 <Link href={"/projects"} className="topelement">Projects</Link>
                 <Link href={"/contact"} className="topelement">Contact</Link>
             </div>  : 

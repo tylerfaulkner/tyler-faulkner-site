@@ -1,6 +1,6 @@
 .topnav{
     width: 100vw;
-    height: 30px;
+    height: 35px;
     background-color: lightsteelblue;
     text-align: center;
     vertical-align: middle;
@@ -13,6 +13,23 @@
 
 .text-black {
     color: black;
+    font-size: 1.5em;
+    margin-left: 10px;
+}
+
+.text-black a {
+    color: black;
+    text-decoration: none;
+}
+
+.text-black a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.text-black a:visited {
+    color: black;
+    text-decoration: none;
 }
 
 .topelement {
@@ -35,7 +52,7 @@ text {
 .elements{
     padding-top: 5px;
     padding-bottom: 5px;
-    padding-right: 10px;
+    padding-right: 15px;
 }
 
 .mr {
