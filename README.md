@@ -5,3 +5,8 @@ Libraries:
 - Next.JS
 - React
 - MailJS
+
+Install:
+- (Node.JS)[def]
+
+[def]: https://nodejs.org/en/download/
