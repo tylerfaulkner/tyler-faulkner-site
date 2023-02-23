@@ -32,9 +32,6 @@ export default function Contact() {
                 email: form.current.email.value,
                 message: form.current.message.value,
             }
-            console.log(form.current.name.value)
-            console.log("sending email")
-            console.log(process.env.NEXT_PUBLIC_SERVICE_ID)
             emailjs.send(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_TEMPLATE_ID, contents, process.env.NEXT_PUBLIC_PUBLIC_KEY)
             .then((result) => {
                 alert('Email Sent Succesfully!')

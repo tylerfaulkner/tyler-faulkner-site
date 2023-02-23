@@ -1,0 +1,137 @@
+.menu-selector {
+    border: none;
+    background-color: inherit;
+    margin-top: 5px;
+    font-size: 1em;
+}
+
+.menu-selector option {
+    background-color: field;
+}
+
+@media screen and (max-width: 1050px){
+
+    .equation {
+        font-size: 1em;
+    }
+    .equation-small {
+        font-size: 0.8em;
+    }
+    .section {
+        height: auto;
+        flex-direction: column;
+        overflow-y: visible;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        align-items: center;
+    }
+
+    .text-area{
+        width: 90%;
+        order: 3;
+    }
+
+    .image-div {
+        margin-top:  15px;
+        margin-bottom: 15px;
+        order: 1;
+    }
+    .text-about {
+        margin-bottom: 20px;
+    }
+
+    .grid {
+        grid-template-columns: 48% 48%;
+    }
+
+    .contact {
+        flex-direction: column;
+    }
+
+    .small-side {
+        width: 100%;
+    }
+
+    .small-side .section-header {
+        font-size: 3.4em;
+    }
+
+    .large-side {
+        width: 100%;
+    }
+
+    .img-article {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .grid {
+        grid-template-columns: 100%;
+    }
+
+    .img-article {
+        height: 250px;
+    }
+    body::-webkit-scrollbar {
+        display: none;
+    }
+    body {
+        -ms-overflow-style: none;
+        scrollbar-width : none;
+    }
+    .image-div{
+        order: 1;
+    }
+    
+}
+
+@media screen and (max-width: 459px){
+    .linkedin {
+        width: 350px;
+        height: 90px;
+    }
+    
+    .github {
+        width: 350px;
+        height: 90px;
+    }
+
+    .img-article {
+        height: 200px;
+    }
+    body::-webkit-scrollbar {
+        display: none;
+    }
+    body {
+        -ms-overflow-style: none;
+        scrollbar-width : none;
+    }
+    .image-div{
+        order: 1;
+    }
+}
+
+@media screen and (max-width: 399px) {
+    .linkedin {
+        width: 300px;
+        height: 80px;
+    }
+    
+    .github {
+        width: 300px;
+        height: 80px;
+    }
+
+    html {
+        width: 100vw;
+        overflow-y: scroll;
+    }
+
+    .outergrid .section-header {
+        font-size: 3.4em;
+    }
+    .image-div{
+        order: 1;
+    }
+}
