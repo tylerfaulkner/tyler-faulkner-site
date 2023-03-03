@@ -21,6 +21,7 @@ export async function getStaticProps () {
 export default function projects({items, ...props}) {
     return (
         <div className='outergrid'>
+            <title>Tyler's Projects</title>
             <div className='section-header'>Projects</div>
             <div className='text'>
                 Here you can find many of the technical projects I have worked on over the years.
