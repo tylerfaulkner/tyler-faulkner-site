@@ -11,6 +11,7 @@ export default function Homepage() {
     const sizes="(max-width: 768px) 33vw, (max-width: 1200px) 50vw, 100vw"
     return (
         <div>
+            <title>Tyler's Portfolio</title>
             <div className="overview center">
                 <div className="section">
                     <div className="text-area">

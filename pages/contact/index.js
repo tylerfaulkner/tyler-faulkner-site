@@ -55,6 +55,7 @@ export default function Contact() {
     
     return (
         <div className="">
+            <title>Tyler's Contact Info</title>
             <div className='contact'>
                 <div className='small-side'>
                     <div className='section-header'>Github</div>
