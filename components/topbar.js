@@ -38,6 +38,7 @@ export default function TopBar() {
                 <Link href={"/"} className="topelement">Home</Link>
                 <Link href={"/Tyler Faulkner Resume 2023.pdf"} className="topelement"> Resume </Link>
                 <Link href={"/projects"} className="topelement">Projects</Link>
+                <Link href={"/experiments"} className="topelement">Experiments</Link>
                 <Link href={"/contact"} className="topelement">Contact</Link>
             </div>  : 
             <a onClick={click}>
